@@ -12,7 +12,21 @@
     tools:context="fr.florentphilippe.lay.MainActivity">
 
     <TextView
+        android:id="@+id/today_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!" />
+        android:text="@string/today"
+        android:fontFamily="serif"
+        android:textSize="20dp"
+        android:textColor="Color.BLACK"
+        android:padding="@dimen/activity_horizontal_margin"/>
+
+    <TextView
+        android:id="@+id/nothing_to_show_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/show_nothing"
+        android:layout_below="@+id/today_text"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp" />
 </RelativeLayout>
