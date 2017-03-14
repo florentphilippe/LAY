@@ -1,27 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--This view allows the user to create a new drug with all its parameters -->
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent">
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <TextView
-        android:id="@+id/drug_name_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/activity_horizontal_margin"
-        android:layout_marginTop="@dimen/activity_horizontal_margin"
-        android:text="Name :"
-        android:textSize="20sp" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/medecine_cover_photo"
+        android:layout_height="180dp"
+        android:layout_width="380dp"
+        android:src="@drawable/cover_medicine_picture"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentLeft="true"/>
 
     <EditText
-        android:id="@+id/drug_name_edit"
+        android:id="@+id/edit_name_drug"
+        android:layout_width="175dp"
         android:layout_height="wrap_content"
-        android:layout_width="250dp"
-        android:layout_marginLeft="75dp"
-        android:inputType="text"
-        android:textSize="20sp"
-        android:layout_alignBaseline="@+id/drug_name_text"
-        android:layout_alignLeft="@id/drug_name_text"/>
+        android:hint="@string/hint_name"
+        android:inputType="textCapCharacters"
+        android:layout_marginStart="32dp"
+        android:layout_below="@+id/medecine_cover_photo"
+        android:layout_marginTop="20dp" />
+
+    </RelativeLayout>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab_pick_photo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_anchor="@id/medecine_cover_photo"
+        app:layout_anchorGravity="bottom|right|end"
+        android:layout_marginRight="15dp"
+        android:src="@drawable/ic_add_a_photo"
+        android:clickable="true"
+        />
 
 
-
-</RelativeLayout>
+</android.support.design.widget.CoordinatorLayout>
