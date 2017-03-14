@@ -1,5 +1,6 @@
 package fr.florentphilippe.lay;
 
+import android.content.Intent;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -21,7 +22,8 @@ public class MainActivity extends AppCompatActivity {
                 public void onClick(View v){
 
                     //Setting the new activity
-                    setContentView(R.layout.activity_new_drug);
+                    Intent i = new Intent (getApplicationContext(),NewDrug.class);
+                    startActivity(i);
                 }
             }
         );

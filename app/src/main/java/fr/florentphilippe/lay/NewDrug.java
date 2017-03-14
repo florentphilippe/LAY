@@ -10,4 +10,5 @@ public class NewDrug extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_drug);
     }
+
 }
