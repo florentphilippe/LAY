@@ -15,7 +15,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".NewDrug"></activity>
+
+        <activity android:name=".NewDrug"
+           android:theme="@style/NewDrugActivity">
+        </activity>
     </application>
 
 </manifest>

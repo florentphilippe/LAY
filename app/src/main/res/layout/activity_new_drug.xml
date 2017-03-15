@@ -17,7 +17,9 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:layout_alignParentLeft="true"/>
+        android:layout_alignParentLeft="true"
+        android:scaleType="fitXY"/>
+        <!--This last methods disable the blanks of the margins  -->
 
     <EditText
         android:id="@+id/edit_name_drug"
