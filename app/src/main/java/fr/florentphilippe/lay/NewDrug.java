@@ -10,11 +10,6 @@ public class NewDrug extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //make the status bar transparent
-        View decorView = getWindow().getDecorView();
-
-
-
         setContentView(R.layout.activity_new_drug);
 
 
