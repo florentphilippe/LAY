@@ -6,6 +6,14 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
+/*
+L.A.Y. : Look After Yourself
+
+Project by Florent Philippe : https://github.com/florentphilippe
+Started on March, 7th 2017
+
+ */
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
