@@ -2,5 +2,10 @@
     <string name="app_name">L.A.Y.</string>
     <string name="show_nothing">Nothing to show :[</string>
     <string name="today">Today</string>
-    <string name="hint_name">Name</string>
+    <string name="hint_drug_name">Name</string>
+    <string name="hint_lab_name">Laboratory</string>
+    <string name="text_start">Start</string>
+    <string name="text_end">End</string>
+    <string name="button_ok">OK</string>
+    <string name="button_cancel">Cancel</string>
 </resources>

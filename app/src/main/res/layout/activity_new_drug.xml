@@ -8,28 +8,78 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-    <ImageView
-        android:id="@+id/medecine_cover_photo"
-        android:layout_height="180dp"
-        android:layout_width="380dp"
-        android:src="@drawable/cover_medicine_picture"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentLeft="true"
-        android:scaleType="fitXY"/>
-        <!--This last methods disable the blanks of the margins  -->
+        <ImageView
+            android:id="@+id/medecine_cover_photo"
+            android:layout_height="180dp"
+            android:layout_width="380dp"
+            android:src="@drawable/cover_medicine_picture"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentLeft="true"
+            android:scaleType="fitXY"/>
+            <!--This last methods disable the blanks of the margins  -->
 
-    <EditText
-        android:id="@+id/edit_name_drug"
-        android:layout_width="175dp"
-        android:layout_height="wrap_content"
-        android:hint="@string/hint_name"
-        android:inputType="textCapCharacters"
-        android:layout_marginStart="32dp"
-        android:layout_below="@+id/medecine_cover_photo"
-        android:layout_marginTop="20dp" />
+        <EditText
+            android:id="@+id/edit_name_drug"
+            android:layout_width="175dp"
+            android:layout_height="wrap_content"
+            android:hint="@string/hint_drug_name"
+            android:inputType="textCapSentences"
+            android:layout_marginStart="10dp"
+            android:layout_below="@+id/medecine_cover_photo"
+            android:layout_marginTop="30dp" />
+
+        <EditText
+            android:id="@+id/edit_lab_name"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@id/edit_name_drug"
+            android:layout_alignBaseline="@id/edit_name_drug"
+            android:inputType="textCapWords"
+            android:hint="@string/hint_lab_name" />
+
+        <TextView
+            android:id="@+id/text_start"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/edit_name_drug"
+            android:layout_marginTop="35dp"
+            android:layout_marginStart="25dp"
+            android:text="@string/text_start"
+            android:textColor="@color/blackFonce"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/text_end"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/text_start"
+            android:layout_marginTop="25dp"
+            android:layout_marginStart="25dp"
+            android:text="@string/text_end"
+            android:textColor="@color/blackFonce"
+            android:textSize="18sp" />
+
+
+        <Button
+            android:id="@+id/button_ok"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/button_ok"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_margin="@dimen/activity_horizontal_margin" />
+
+        <Button
+            android:id="@+id/button_cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/button_cancel"
+            android:layout_toLeftOf="@id/button_ok"
+            android:layout_alignBaseline="@id/button_ok" />
 
     </RelativeLayout>
 
