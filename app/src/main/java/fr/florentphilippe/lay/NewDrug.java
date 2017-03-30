@@ -37,6 +37,32 @@ public class NewDrug extends AppCompatActivity {
         Calendar startDay = Calendar.getInstance();
         Calendar endDay = Calendar.getInstance();
 
+        //Buttons listeners
+        buttonStartDate.setOnClickListener(
+                new Button.OnClickListener(){
+                    public void onClick(View v){
+
+                        //Show the Date picker
+                        showDatePickerDialog(v);
+
+                        //Get the date entered by the user
+
+                    }
+                }
+        );
+
+        buttonEndDate.setOnClickListener(
+                new Button.OnClickListener(){
+                    public void onClick(View v){
+
+                        //Show the Date picker
+                        showDatePickerDialog(v);
+
+                        //Get the date entered by the user
+
+                    }
+                }
+        );
 
 
     }

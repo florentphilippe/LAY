@@ -12,8 +12,10 @@ import java.util.Calendar;
 
 public class DatePickerFragment extends DialogFragment implements DatePickerDialog.OnDateSetListener {
 
+    //Creating a receiver calendar
+    Calendar receiver = Calendar.getInstance();
 
-    //@NonNull
+
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
         //Creating a default calendar with the current date
@@ -28,18 +30,21 @@ public class DatePickerFragment extends DialogFragment implements DatePickerDial
         return new DatePickerDialog(getActivity(), this, year, month, day);
     }
 
-    //@Override
+
     //Return the date set by the user
     public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
 
-        //Creating a receiver calendar
-        Calendar receiver = Calendar.getInstance();
         //Initialize the date with variables from the user
         receiver.set(Calendar.YEAR,year);
         receiver.set(Calendar.YEAR,year);
         receiver.set(Calendar.YEAR,year);
 
 
+    }
+
+    //Receiver calendar Getter
+    public Calendar datePickerCalendarGetter(){
+        return receiver;
     }
 
 }
