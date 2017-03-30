@@ -70,7 +70,8 @@
             android:layout_alignBaseline="@id/text_start"
             android:layout_toRightOf="@id/text_start"
             android:layout_marginStart="35dp"
-            android:textSize="18sp"/>
+            android:textSize="18sp"
+            android:onClick="showDatePickerDialog"/>
 
         <Button
             android:id="@+id/button_end_date"
@@ -79,7 +80,8 @@
             android:layout_alignBaseline="@id/text_end"
             android:layout_toRightOf="@id/text_start"
             android:layout_marginStart="35dp"
-            android:textSize="18sp"/>
+            android:textSize="18sp"
+            android:onClick="showDatePickerDialog"/>
 
         <Button
             android:id="@+id/button_ok"
@@ -97,6 +99,7 @@
             android:text="@string/button_cancel"
             android:layout_toLeftOf="@id/button_ok"
             android:layout_alignBaseline="@id/button_ok" />
+
 
     </RelativeLayout>
 
