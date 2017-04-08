@@ -1,6 +1,7 @@
 package fr.florentphilippe.lay;
 
 
+import android.app.Dialog;
 import android.support.v4.app.DialogFragment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -15,14 +16,16 @@ import fr.florentphilippe.lay.fragments.DatePickerFragment;
 
 public class NewDrug extends AppCompatActivity {
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_drug);
 
         //Importing EditText from UI
-        Button buttonStartDate = (Button) findViewById(R.id.button_start_date);
-        Button buttonEndDate = (Button) findViewById(R.id.button_end_date);
+        final Button buttonStartDate = (Button) findViewById(R.id.button_start_date);
+        final Button buttonEndDate = (Button) findViewById(R.id.button_end_date);
 
         //Initialise the current date
         Calendar currentCalendar = Calendar.getInstance();
@@ -41,11 +44,11 @@ public class NewDrug extends AppCompatActivity {
         buttonStartDate.setOnClickListener(
                 new Button.OnClickListener(){
                     public void onClick(View v){
+                        //set marker text
+                        buttonStartDate.setText("");
 
                         //Show the Date picker
                         showDatePickerDialog(v);
-
-                        //Get the date entered by the user
 
                     }
                 }
@@ -54,11 +57,11 @@ public class NewDrug extends AppCompatActivity {
         buttonEndDate.setOnClickListener(
                 new Button.OnClickListener(){
                     public void onClick(View v){
+                        //set marker text
+                        buttonEndDate.setText("");
 
                         //Show the Date picker
                         showDatePickerDialog(v);
-
-                        //Get the date entered by the user
 
                     }
                 }
@@ -71,6 +74,7 @@ public class NewDrug extends AppCompatActivity {
     public void showDatePickerDialog(View v) {
         DialogFragment newFragment = new DatePickerFragment();
         newFragment.show(getSupportFragmentManager(), "datePicker");
+        int anInt = newFragment.getId();
 
     }
 
