@@ -17,7 +17,11 @@ import fr.florentphilippe.lay.fragments.DatePickerFragment;
 public class NewDrug extends AppCompatActivity {
 
 
+    //Start and End days calendars
+    Calendar startDay = Calendar.getInstance();
+    Calendar endDay = Calendar.getInstance();
 
+    
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,9 +40,6 @@ public class NewDrug extends AppCompatActivity {
         buttonStartDate.setText(format);
         buttonEndDate.setText(format);
 
-        //Start and End days calendars
-        Calendar startDay = Calendar.getInstance();
-        Calendar endDay = Calendar.getInstance();
 
         //Buttons listeners
         buttonStartDate.setOnClickListener(
@@ -49,6 +50,9 @@ public class NewDrug extends AppCompatActivity {
 
                         //Show the Date picker
                         showDatePickerDialog(v);
+                        
+                        //Getting the values of the user
+                        Tools.stringConverterToDate(buttonStartDate.getText().toString());
 
                     }
                 }
@@ -78,4 +82,12 @@ public class NewDrug extends AppCompatActivity {
 
     }
 
+    //***Calendar Getters***
+
+    public Calendar getStartDay() {
+        return startDay;
+    }
+    public Calendar getEndDay() {
+        return endDay;
+    }
 }

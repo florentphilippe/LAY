@@ -13,9 +13,9 @@ import fr.florentphilippe.lay.R;
 
 public class DatePickerFragment extends DialogFragment implements DatePickerDialog.OnDateSetListener {
 
-    private int theYear;
-    private int theMonth;
-    private int theDay;
+    private String theYear;
+    private String theMonth;
+    private String theDay;
 
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
@@ -38,10 +38,22 @@ public class DatePickerFragment extends DialogFragment implements DatePickerDial
         Button startDate = (Button) getActivity().findViewById(R.id.button_start_date);
         Button endDate = (Button) getActivity().findViewById(R.id.button_end_date);
 
-        //Setting the date values
-        theDay = dayOfMonth;
-        theMonth = month+1;
-        theYear = year;
+
+        //Setting the date's values with two numbers for each values at least
+        if (dayOfMonth < 10){
+            theDay = new StringBuilder("0").append(dayOfMonth).toString();
+        }else{
+            theDay = Integer.toString(dayOfMonth);
+        }
+
+        if (month+1 < 10){
+            theMonth = new StringBuilder("0").append(month + 1).toString();
+        }else{
+            theMonth = Integer.toString(month + 1);
+        }
+
+        theYear = Integer.toString(year);
+
 
         //setting button text
         String date = dateGetter();
