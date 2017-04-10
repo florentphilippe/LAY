@@ -16,7 +16,20 @@
         <item>Month</item>
         <item>Year</item>
     </string-array>
-    <string name="spinner_prompt">Day</string>
+    <string name="spinner_prompt_frequency">Day</string>
+    <string name="text_when">Time : </string>
+    <string-array name="spinner_time1">
+        <item>Before</item>
+        <item>During</item>
+        <item>After</item>
+    </string-array>
+    <string name="spinner_prompt_time1">During</string>
+    <string-array name="spinner_time2">
+        <item>Breakfast</item>
+        <item>Lunch</item>
+        <item>Diner</item>
+    </string-array>
+    <string name="spinner_prompt_time2">Diner</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

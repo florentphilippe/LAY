@@ -124,7 +124,7 @@
             android:layout_toRightOf="@id/text_middle_frequency"
             android:layout_alignBaseline="@id/text_middle_frequency"
             android:layout_marginLeft="20dp"
-            android:prompt="@string/spinner_prompt"
+            android:prompt="@string/spinner_prompt_frequency"
             android:entries="@array/spinner_frequency_selector"
             />
 
@@ -140,6 +140,38 @@
             app:fabSize="normal"
             />
 
+        <TextView
+            android:id="@+id/text_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/text_frequency"
+            android:layout_marginTop="30dp"
+            android:text="@string/text_when"
+            android:textSize="18sp"
+            android:textColor="@color/blackFonce"
+            android:layout_marginStart="25dp"/>
+
+        <Spinner
+            android:id="@+id/spinner_time1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/text_time"
+            android:layout_alignBaseline="@id/text_time"
+            android:layout_marginLeft="15dp"
+            android:entries="@array/spinner_time1"
+            android:prompt="@string/spinner_prompt_time1"
+            />
+
+        <Spinner
+            android:id="@+id/spinner_time2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/spinner_time1"
+            android:layout_alignBaseline="@id/text_time"
+            android:layout_marginRight="10dp"
+            android:entries="@array/spinner_time2"
+            android:prompt="@string/spinner_prompt_time2"
+            />
 
     </RelativeLayout>
 
