@@ -5,7 +5,10 @@ import android.support.v4.app.DialogFragment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.Spinner;
+
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -29,6 +32,8 @@ public class NewDrug extends AppCompatActivity {
         //Importing EditText from UI
         final Button buttonStartDate = (Button) findViewById(R.id.button_start_date);
         final Button buttonEndDate = (Button) findViewById(R.id.button_end_date);
+        Spinner freqeuncySelector = (Spinner) findViewById(R.id.spinner_frequency_selector);
+
 
         //Initialise the current date
         Calendar currentCalendar = Calendar.getInstance();

@@ -8,7 +8,15 @@
     <string name="text_end">End</string>
     <string name="button_ok">OK</string>
     <string name="button_cancel">Cancel</string>
-    <string name="text_frequency">Frequency</string>
+    <string name="text_frequency">Frequency : </string>
+    <string name="text_middle_frequency">per</string>
+    <string-array name="spinner_frequency_selector">
+        <item>Day</item>
+        <item>Week</item>
+        <item>Month</item>
+        <item>Year</item>
+    </string-array>
+    <string name="spinner_prompt">Day</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
