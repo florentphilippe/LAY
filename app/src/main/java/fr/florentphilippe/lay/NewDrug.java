@@ -1,7 +1,6 @@
 package fr.florentphilippe.lay;
 
 
-import android.app.Dialog;
 import android.support.v4.app.DialogFragment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -50,10 +49,6 @@ public class NewDrug extends AppCompatActivity {
 
                         //Show the Date picker
                         showDatePickerDialog(v);
-                        
-                        //Getting the values of the user
-                        Tools.stringConverterToDate(buttonStartDate.getText().toString());
-
                     }
                 }
         );
@@ -70,6 +65,11 @@ public class NewDrug extends AppCompatActivity {
                     }
                 }
         );
+
+        //Getting the values of the user
+        startDay = Tools.stringConverterToDate(buttonStartDate.getText().toString());
+        endDay = Tools.stringConverterToDate(buttonEndDate.getText().toString());
+
 
 
     }
