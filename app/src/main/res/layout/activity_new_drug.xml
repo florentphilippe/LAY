@@ -94,35 +94,36 @@
             android:textColor="@color/blackFonce"
             android:textSize="18sp" />
 
-        <EditText
-            android:id="@+id/edit_frequency"
+        <TextView
+            android:id="@+id/text_start_frequency"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_toRightOf="@id/text_frequency"
             android:layout_alignBaseline="@id/text_frequency"
             android:layout_marginLeft="25dp"
             android:textColor="@color/blackFonce"
+            android:textSize="18sp"
+            android:text="@string/text_start_frequency"
+            />
+
+        <EditText
+            android:id="@+id/edit_frequency"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/text_start_frequency"
+            android:layout_alignBaseline="@id/text_frequency"
+            android:layout_marginLeft="20dp"
+            android:textColor="@color/blackFonce"
             android:inputType="number"
             android:text="1" />
 
-        <TextView
-            android:id="@+id/text_middle_frequency"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_toRightOf="@id/edit_frequency"
-            android:layout_alignBaseline="@id/edit_frequency"
-            android:layout_marginLeft="20dp"
-            android:textColor="@color/blackFonce"
-            android:textSize="18sp"
-            android:text="@string/text_middle_frequency"
-             />
 
         <Spinner
             android:id="@+id/spinner_frequency_selector"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toRightOf="@id/text_middle_frequency"
-            android:layout_alignBaseline="@id/text_middle_frequency"
+            android:layout_toRightOf="@id/edit_frequency"
+            android:layout_alignBaseline="@id/edit_frequency"
             android:layout_marginLeft="20dp"
             android:prompt="@string/spinner_prompt_frequency"
             android:entries="@array/spinner_frequency_selector"

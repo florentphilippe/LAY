@@ -9,7 +9,7 @@
     <string name="button_ok">OK</string>
     <string name="button_cancel">Cancel</string>
     <string name="text_frequency">Frequency : </string>
-    <string name="text_middle_frequency">per</string>
+    <string name="text_start_frequency">Every </string>
     <string-array name="spinner_frequency_selector">
         <item>Day</item>
         <item>Week</item>
