@@ -6,6 +6,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
+import java.util.ArrayList;
+
+import fr.florentphilippe.lay.classes.Drug;
+
 /*
 L.A.Y. : Look After Yourself
 
@@ -15,6 +19,9 @@ Started on March, 7th 2017
  */
 
 public class MainActivity extends AppCompatActivity {
+
+    //Drugs container
+    ArrayList<Drug> drugsList = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

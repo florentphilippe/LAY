@@ -1,13 +1,14 @@
 package fr.florentphilippe.lay.classes;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Calendar;
 
 /*
 This class represent the "Drug" Object and all its parameters
  */
 public class Drug implements Serializable{
-    
+
 
     //Main titles and period
     private String drugName;
@@ -22,6 +23,35 @@ public class Drug implements Serializable{
     //Time in the frequency
     private String absoluteTime;
     private String relativeTime;
+
+
+
+    //Drug static container
+    private static ArrayList<Drug> drugsList;
+
+
+    //***Constructors***
+    public Drug(){
+        drugName = "";
+        laboratoryName = "";
+        startDate = Calendar.getInstance();
+        endDate = Calendar.getInstance();
+        timesPerFrequency = 1;
+        frequency = "Day";
+        absoluteTime = "Breakfast";
+        relativeTime = "Before";
+    }
+
+    public Drug(String cDrugName, String cLaboratoryName, Calendar cStartDate, Calendar cEndDate, Integer cTimesPerFrequency, String cFrequency, String cAbsoluteTime, String cRelativeTime){
+        drugName = cDrugName;
+        laboratoryName = cLaboratoryName;
+        startDate = cStartDate;
+        endDate = cEndDate;
+        timesPerFrequency = cTimesPerFrequency;
+        frequency = cFrequency;
+        absoluteTime = cAbsoluteTime;
+        relativeTime = cRelativeTime;
+    }
 
 
 
@@ -59,6 +89,14 @@ public class Drug implements Serializable{
         return relativeTime;
     }
 
+
+    public static ArrayList<Drug> getDrugsList() {
+        return drugsList;
+    }
+
+
+
+
     //***Setters***
     public void setDrugName(String drugName) {
         this.drugName = drugName;
@@ -90,6 +128,11 @@ public class Drug implements Serializable{
 
     public void setRelativeTime(String relativeTime) {
         this.relativeTime = relativeTime;
+    }
+
+
+    public static void setDrugsList(ArrayList<Drug> drugsList) {
+        Drug.drugsList = drugsList;
     }
 
 }
