@@ -135,4 +135,20 @@ public class Drug implements Serializable{
         Drug.drugsList = drugsList;
     }
 
+
+    //***ToString***
+    public String toString(){
+        return ">>>>>Drug Object<<<<<<\n"
+                +"-Drug Name = " + this.drugName
+                +"-Laboratory Name = " + this.laboratoryName + "\n"
+                +"-Start Date = " + this.startDate.toString() + "\n"
+                +"-End Date = " + this.endDate.toString() + "\n"
+                +"-Times per Frequency = " + this.timesPerFrequency + "\n"
+                +"-Frequency = " + this.frequency + "\n"
+                +"-Absolute Time = " + this.absoluteTime + "\n"
+                +"-Relative Time = " + this.relativeTime + "\n";
+    }
+
+
 }
+
