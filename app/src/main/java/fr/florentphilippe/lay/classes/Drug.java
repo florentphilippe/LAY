@@ -27,7 +27,7 @@ public class Drug implements Serializable{
 
 
     //Drug static container
-    private static ArrayList<Drug> drugsList;
+    //private static ArrayList<Drug> drugsList;
 
 
     //***Constructors***
@@ -90,9 +90,9 @@ public class Drug implements Serializable{
     }
 
 
-    public static ArrayList<Drug> getDrugsList() {
+    /*public static ArrayList<Drug> getDrugsList() {
         return drugsList;
-    }
+    }*/
 
 
 
@@ -131,18 +131,18 @@ public class Drug implements Serializable{
     }
 
 
-    public static void setDrugsList(ArrayList<Drug> drugsList) {
+    /*public static void setDrugsList(ArrayList<Drug> drugsList) {
         Drug.drugsList = drugsList;
-    }
+    }*/
 
 
     //***ToString***
     public String toString(){
         return ">>>>>Drug Object<<<<<<\n"
-                +"-Drug Name = " + this.drugName
+                +"-Drug Name = " + this.drugName + "\n"
                 +"-Laboratory Name = " + this.laboratoryName + "\n"
-                +"-Start Date = " + this.startDate.toString() + "\n"
-                +"-End Date = " + this.endDate.toString() + "\n"
+                +"-Start Date = " + this.startDate + "\n"
+                +"-End Date = " + this.endDate + "\n"
                 +"-Times per Frequency = " + this.timesPerFrequency + "\n"
                 +"-Frequency = " + this.frequency + "\n"
                 +"-Absolute Time = " + this.absoluteTime + "\n"

@@ -97,10 +97,12 @@ public class NewDrug extends AppCompatActivity {
                         drug.setAbsoluteTime(absoluteTime.getSelectedItem().toString());
                         drug.setRelativeTime(relativeTime.getSelectedItem().toString());
                         Log.i("appAction","Creating new Drug object");
+                        Log.i("appAction",drug.toString());
 
 
                         //Adding this new object to container
-                        Drug.getDrugsList().add(drug);
+                        MainActivity.drugsList.add(drug);
+                        Log.i("appAction","List length = " + MainActivity.drugsList.size());
 
                         //Close activity
                     }
