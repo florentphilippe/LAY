@@ -6,6 +6,7 @@
         <item name="colorPrimary">@color/materialGrey</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:colorBackground">@color/background_material_light</item>
     </style>
     
     <style name="NewDrugActivity" parent="Theme.AppCompat.Light.NoActionBar">
@@ -14,6 +15,7 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
         <item name="android:windowTranslucentStatus">true</item>
+        <item name="android:colorBackground">@color/background_material_light</item>
     </style>
 
 
