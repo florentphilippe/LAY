@@ -105,6 +105,8 @@ public class NewDrug extends AppCompatActivity {
                         Log.i("appAction","List length = " + MainActivity.drugsList.size());
 
                         //Close activity
+                        finish();
+                        Log.i("appAction","Close new drug activity intent");
                     }
                 }
         );
