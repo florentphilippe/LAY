@@ -104,6 +104,9 @@ public class NewDrug extends AppCompatActivity {
                         MainActivity.drugsList.add(drug);
                         Log.i("appAction","List length = " + MainActivity.drugsList.size());
 
+                        //Write ArrayList container to the internal storage
+                        Tools.writeAnArray(MainActivity.drugsList);
+
                         //Close activity
                         finish();
                         Log.i("appAction","Close new drug activity intent");

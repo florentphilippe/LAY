@@ -1,7 +1,17 @@
 package fr.florentphilippe.lay;
 
 
+import android.util.Log;
+
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.util.ArrayList;
 import java.util.Calendar;
+
+import fr.florentphilippe.lay.classes.Drug;
+
 
 /*
 * A class containing all tools for converting, processing values ...
@@ -27,5 +37,36 @@ public class Tools {
                                                                         .toString()));
 
         return calendar;
+    }
+
+
+    //***Files writers and readers***
+    //Writer
+    public static void writeAnArray(ArrayList arrayList){
+        Log.i("appAction","Writing Drug container ... ");
+        try {
+            FileOutputStream fileOutputStream = new FileOutputStream("objects");
+            ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream);
+            objectOutputStream.writeObject(arrayList);
+            objectOutputStream.close();
+        }catch (Exception e){
+            Log.e("appAction","An error occurred !");
+            Log.e("appAction",e.getStackTrace().toString());
+        }
+    }
+
+    //Reader
+    public static ArrayList<Drug> readAnArray(){
+        Log.i("appAction","Reading Drug container ...");
+        ArrayList tempContainer = new ArrayList();
+        try {
+            FileInputStream fileInputStream = new FileInputStream("objects");
+            ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);
+            tempContainer = (ArrayList) objectInputStream.readObject();
+        }catch(Exception e){
+            Log.i("appAction","No file found !");
+            Log.e("appAction", e.getStackTrace().toString());
+        }
+        return tempContainer;
     }
 }
