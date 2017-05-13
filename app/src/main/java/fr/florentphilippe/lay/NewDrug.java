@@ -102,10 +102,10 @@ public class NewDrug extends AppCompatActivity {
 
                         //Adding this new object to container
                         MainActivity.drugsList.add(drug);
-                        Log.i("appAction","List length = " + MainActivity.drugsList.size());
+                        Log.i("appAction","List length : " + MainActivity.drugsList.size());
 
                         //Write ArrayList container to the internal storage
-                        Tools.writeAnArray(MainActivity.drugsList);
+                        Tools.writeAnArray(MainActivity.drugsList, getApplicationContext());
 
                         //Close activity
                         finish();

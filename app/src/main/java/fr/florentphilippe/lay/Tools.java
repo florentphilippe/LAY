@@ -1,6 +1,7 @@
 package fr.florentphilippe.lay;
 
 
+import android.content.Context;
 import android.util.Log;
 
 import java.io.FileInputStream;
@@ -42,30 +43,31 @@ public class Tools {
 
     //***Files writers and readers***
     //Writer
-    public static void writeAnArray(ArrayList arrayList){
+    public static void writeAnArray(ArrayList arrayList, Context context){
         Log.i("appAction","Writing Drug container ... ");
         try {
-            FileOutputStream fileOutputStream = new FileOutputStream("objects");
+            FileOutputStream fileOutputStream = context.openFileOutput("objects", Context.MODE_PRIVATE);
             ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream);
             objectOutputStream.writeObject(arrayList);
             objectOutputStream.close();
         }catch (Exception e){
-            Log.e("appAction","An error occurred !");
-            Log.e("appAction",e.getStackTrace().toString());
+            Log.i("appAction","An error occurred !");
+            Log.e("appAction", Log.getStackTraceString(e));
         }
     }
 
     //Reader
-    public static ArrayList<Drug> readAnArray(){
+    public static ArrayList<Drug> readAnArray(Context context){
         Log.i("appAction","Reading Drug container ...");
         ArrayList tempContainer = new ArrayList();
         try {
-            FileInputStream fileInputStream = new FileInputStream("objects");
+            FileInputStream fileInputStream = context.openFileInput("objects");
             ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);
             tempContainer = (ArrayList) objectInputStream.readObject();
+            objectInputStream.close();
         }catch(Exception e){
             Log.i("appAction","No file found !");
-            Log.e("appAction", e.getStackTrace().toString());
+            Log.e("appAction", Log.getStackTraceString(e));
         }
         return tempContainer;
     }

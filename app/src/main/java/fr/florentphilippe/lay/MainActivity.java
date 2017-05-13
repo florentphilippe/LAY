@@ -26,13 +26,14 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        Log.i("appAction","=====SERVICE START=====");
         Log.i("appAction","Launching MainActivity ...");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
         //Import drug container from file
         Log.i("appAction","Grabbing drugs Array container");
-        drugsList = Tools.readAnArray();
+        drugsList = Tools.readAnArray(getApplicationContext());
         Log.i("appAction","Drugs container length : " + drugsList.size());
 
         //Importing Floating Action button
