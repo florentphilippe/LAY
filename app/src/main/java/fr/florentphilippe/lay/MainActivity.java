@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.View;
 
 import java.util.ArrayList;
+import java.util.ListIterator;
 
 import fr.florentphilippe.lay.classes.Drug;
 
@@ -51,5 +52,17 @@ public class MainActivity extends AppCompatActivity {
             }
         );
 
+    }
+
+    //====TEST STATEMENT=====
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        for (int i = 0; i <= drugsList.size(); i++){
+            drugsList.remove(i);
+        }
+        Log.i("appAction", "onDestroy list length : " + drugsList.size());
+        Tools.writeAnArray(drugsList, getApplicationContext());
+        Log.i("appAction", "ArrayList cleared !");
     }
 }
