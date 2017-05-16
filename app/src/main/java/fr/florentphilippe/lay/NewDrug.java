@@ -78,14 +78,16 @@ public class NewDrug extends AppCompatActivity {
                 }
         );
 
-        //Getting the values of the user
-        final Calendar startDay = Tools.stringConverterToDate(buttonStartDate.getText().toString());
-        final Calendar endDay = Tools.stringConverterToDate(buttonEndDate.getText().toString());
 
         //okButton action
         okButton.setOnClickListener(
                 new FloatingActionButton.OnClickListener(){
                     public void onClick (View v){
+                        //Getting the values of the user
+                        final Calendar startDay = Tools.stringConverterToDate(buttonStartDate.getText().toString());
+                        final Calendar endDay = Tools.stringConverterToDate(buttonEndDate.getText().toString());
+
+
                         //Creating new Drug object with values selected by user
                         Drug drug = new Drug();
                         drug.setDrugName(drugName.getText().toString());
@@ -99,6 +101,8 @@ public class NewDrug extends AppCompatActivity {
                         Log.i("appAction","Creating new Drug object");
                         Log.i("appAction",drug.toString());
 
+                        //isHappeningToday
+                        drug.isHappeningToday();
 
                         //Adding this new object to container
                         MainActivity.drugsList.add(drug);
