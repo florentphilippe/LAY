@@ -31,12 +31,13 @@ public class Tools {
                                                                                  .toString()));
         calendar.set(Calendar.MONTH, Integer.parseInt(new StringBuilder().append(buttonText.charAt(3))
                                                                         .append(buttonText.charAt(4))
-                                                                        .toString()));
-        calendar.set(Calendar.YEAR, Integer.parseInt(new StringBuilder(buttonText.charAt(6)).append(buttonText.charAt(7))
+                                                                        .toString()) - 1);
+        calendar.set(Calendar.YEAR, Integer.parseInt(new StringBuilder().append(buttonText.charAt(6))
+                                                                        .append(buttonText.charAt(7))
                                                                         .append(buttonText.charAt(8))
                                                                         .append(buttonText.charAt(9))
                                                                         .toString()));
-
+        Log.i("appAction","stringConverterToDate method converts : " + buttonText + " to : " + calendar.toString());
         return calendar;
     }
 
@@ -70,5 +71,21 @@ public class Tools {
             Log.e("appAction", Log.getStackTraceString(e));
         }
         return tempContainer;
+    }
+
+
+    //Get date in a unique integer => YEAR + MONTH + DAY OF THE MONTH
+    public static int dateToInteger(Calendar cal){
+        Log.i("appAction", "Converting calendar to a unique integer ...");
+
+        StringBuilder processString = new StringBuilder();
+        processString.append(cal.get(Calendar.YEAR));
+        processString.append(cal.get(Calendar.MONTH));
+        processString.append(cal.get(Calendar.DAY_OF_MONTH));
+
+        int result = Integer.parseInt(processString.toString());
+
+        Log.i("appAction","Calendar converted to : " + result);
+        return result;
     }
 }
