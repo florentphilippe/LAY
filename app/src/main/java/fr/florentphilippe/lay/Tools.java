@@ -76,11 +76,19 @@ public class Tools {
 
     //Get date in a unique integer => YEAR + MONTH + DAY OF THE MONTH
     public static int dateToInteger(Calendar cal){
-        Log.i("appAction", "Converting calendar to a unique integer ...");
+        Log.i("appAction", "Calendar : YEAR = " + cal.get(Calendar.YEAR) + " MONTH = " + cal.get(Calendar.MONTH) + " DAY_OF_MONTH = " + cal.get(Calendar.DAY_OF_MONTH));
 
         StringBuilder processString = new StringBuilder();
         processString.append(cal.get(Calendar.YEAR));
+
+        if (cal.get(Calendar.MONTH) < 10){
+            processString.append(0);
+        }
         processString.append(cal.get(Calendar.MONTH));
+
+        if (cal.get(Calendar.DAY_OF_MONTH) < 10){
+            processString.append(0);
+        }
         processString.append(cal.get(Calendar.DAY_OF_MONTH));
 
         int result = Integer.parseInt(processString.toString());
