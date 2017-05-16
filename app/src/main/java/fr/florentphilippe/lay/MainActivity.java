@@ -58,9 +58,9 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        for (int i = 0; i <= drugsList.size(); i++){
-            drugsList.remove(i);
-        }
+
+        drugsList = new ArrayList<>();
+
         Log.i("appAction", "onDestroy list length : " + drugsList.size());
         Tools.writeAnArray(drugsList, getApplicationContext());
         Log.i("appAction", "ArrayList cleared !");
