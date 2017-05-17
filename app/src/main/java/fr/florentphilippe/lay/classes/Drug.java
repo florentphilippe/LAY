@@ -1,8 +1,12 @@
 package fr.florentphilippe.lay.classes;
 
+import android.util.Log;
+
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Calendar;
+
+import fr.florentphilippe.lay.Tools;
 
 /*
 This class represent the "Drug" Object and all its parameters
@@ -53,6 +57,44 @@ public class Drug implements Serializable{
         relativeTime = cRelativeTime;
     }
 
+    //Determine if the drug has to be taken on the current day
+    public Boolean isHappeningToday (){
+        Log.i("appAction", "Launching isHappeningToday method ...");
+        Log.i("appAction", "Converting calendars to integers ...");
+
+        //Converting calendars date to integers
+        int startDateInt = Tools.dateToInteger(this.getStartDate());
+        int endDateInt = Tools.dateToInteger(this.getEndDate());
+        int currentDateInt = Tools.dateToInteger(Calendar.getInstance());
+
+        //Date used in the process
+        Calendar targetDate = this.getStartDate();
+
+        //Container for all the dates (integers) which match with the frequency
+        ArrayList matchingDates = new ArrayList<>();
+        matchingDates.add(startDateInt);
+
+
+        //Case when frequency is set to 'Day'
+        if (this.frequency.equals("Day")){
+            Log.i("appAction","The Drug object frequency is set to 'Day'.");
+
+            while(targetDate.compareTo(this.getEndDate()) < 0){
+                targetDate.add(Calendar.DAY_OF_MONTH, this.timesPerFrequency);
+                matchingDates.add(Tools.dateToInteger(targetDate));
+            }
+
+            Log.i("appAction","Matching dates list length : " + matchingDates.size());
+            Log.i("appAction","3 fist elements description  : " + matchingDates.get(0) + "; " + matchingDates.get(1) + "; " + matchingDates.get(2) + "; " );
+        }
+
+
+
+
+
+        return false;
+    }
+
 
 
 
@@ -88,11 +130,6 @@ public class Drug implements Serializable{
     public String getRelativeTime() {
         return relativeTime;
     }
-
-
-    /*public static ArrayList<Drug> getDrugsList() {
-        return drugsList;
-    }*/
 
 
 
@@ -131,14 +168,10 @@ public class Drug implements Serializable{
     }
 
 
-    /*public static void setDrugsList(ArrayList<Drug> drugsList) {
-        Drug.drugsList = drugsList;
-    }*/
-
 
     //***ToString***
     public String toString(){
-        return ">>>>>Drug Object<<<<<<\n"
+        return "\n>>>>>Drug Object<<<<<<\n"
                 +"-Drug Name = " + this.drugName + "\n"
                 +"-Laboratory Name = " + this.laboratoryName + "\n"
                 +"-Start Date = " + this.startDate + "\n"
@@ -146,7 +179,7 @@ public class Drug implements Serializable{
                 +"-Times per Frequency = " + this.timesPerFrequency + "\n"
                 +"-Frequency = " + this.frequency + "\n"
                 +"-Absolute Time = " + this.absoluteTime + "\n"
-                +"-Relative Time = " + this.relativeTime + "\n";
+                +"-Relative Time = " + this.relativeTime + "\n\n";
     }
 
 
