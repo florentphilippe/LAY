@@ -111,7 +111,6 @@ public class Drug implements Serializable{
 
         //Result description
         Log.i("appAction","Matching dates list length : " + matchingDates.size());
-        Log.i("appAction","3 fist elements description  : " + matchingDates.get(0) + "; " + matchingDates.get(1) + "; " + matchingDates.get(2) + "; " );
 
         for(int i = 0; i < matchingDates.size(); i ++) {
             if (matchingDates.get(i).equals(currentDateInt)){
