@@ -62,9 +62,11 @@ public class Drug implements Serializable{
         Log.i("appAction", "Launching isHappeningToday method ...");
         Log.i("appAction", "Converting calendars to integers ...");
 
+        //Boolean result
+        Boolean result = false;
+
         //Converting calendars date to integers
         int startDateInt = Tools.dateToInteger(this.getStartDate());
-        int endDateInt = Tools.dateToInteger(this.getEndDate());
         int currentDateInt = Tools.dateToInteger(Calendar.getInstance());
 
         //Date used in the process
@@ -83,16 +85,43 @@ public class Drug implements Serializable{
                 targetDate.add(Calendar.DAY_OF_MONTH, this.timesPerFrequency);
                 matchingDates.add(Tools.dateToInteger(targetDate));
             }
+        }else if(this.frequency.equals("Week")){
+            Log.i("appAction","The Drug object frequency is set to 'Week'.");
 
-            Log.i("appAction","Matching dates list length : " + matchingDates.size());
-            Log.i("appAction","3 fist elements description  : " + matchingDates.get(0) + "; " + matchingDates.get(1) + "; " + matchingDates.get(2) + "; " );
+            while (targetDate.compareTo(this.getEndDate()) < 0){
+                targetDate.add(Calendar.DAY_OF_MONTH, this.timesPerFrequency * 7);
+                matchingDates.add(Tools.dateToInteger(targetDate));
+            }
+        }else if(this.frequency.equals("Month")){
+            Log.i("appAction","The Drug object frequency is set to 'Month'.");
+
+            while (targetDate.compareTo(this.getEndDate()) < 0){
+                targetDate.add(Calendar.MONTH, this.timesPerFrequency);
+                matchingDates.add(Tools.dateToInteger(targetDate));
+            }
+        }else if(this.frequency.equals("Year")){
+            Log.i("appAction","The Drug object frequency is set to 'Year'.");
+
+            while (targetDate.compareTo(this.getEndDate()) < 0){
+                targetDate.add(Calendar.YEAR, this.timesPerFrequency);
+                matchingDates.add(Tools.dateToInteger(targetDate));
+            }
         }
 
 
+        //Result description
+        Log.i("appAction","Matching dates list length : " + matchingDates.size());
+        Log.i("appAction","3 fist elements description  : " + matchingDates.get(0) + "; " + matchingDates.get(1) + "; " + matchingDates.get(2) + "; " );
 
+        for(int i = 0; i < matchingDates.size(); i ++) {
+            if (matchingDates.get(i).equals(currentDateInt)){
+                result = true;
+                Log.i("appAction","|||| Result ||||\n" + result);
+                break;
+            }
+        }
 
-
-        return false;
+        return result;
     }
 
 
