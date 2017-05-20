@@ -13,7 +13,6 @@ import android.widget.Spinner;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
-
 import fr.florentphilippe.lay.classes.Drug;
 import fr.florentphilippe.lay.fragments.DatePickerFragment;
 
@@ -101,9 +100,6 @@ public class NewDrug extends AppCompatActivity {
                         Log.i("appAction","Creating new Drug object");
                         Log.i("appAction",drug.toString());
 
-                        //isHappeningToday
-                        drug.isHappeningToday();
-
                         //Adding this new object to container
                         MainActivity.drugsList.add(drug);
                         Log.i("appAction","List length : " + MainActivity.drugsList.size());
@@ -112,8 +108,8 @@ public class NewDrug extends AppCompatActivity {
                         Tools.writeAnArray(MainActivity.drugsList, getApplicationContext());
 
                         //Close activity
-                        finish();
                         Log.i("appAction","Close new drug activity intent");
+                        finish();
                     }
                 }
         );
