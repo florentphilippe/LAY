@@ -22,12 +22,13 @@ Started on March, 7th 2017
 
 public class MainActivity extends AppCompatActivity {
 
-    //Drugs container
+    //Drug containers
     static ArrayList<Drug> drugsList = new ArrayList<>();
+    ArrayList<Drug> areHappeningToday = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        Log.i("appAction","=====SERVICE START=====");
+        Log.i("appAction","=====SERVICE STARTS=====");
         Log.i("appAction","Launching MainActivity ...");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
@@ -36,6 +37,16 @@ public class MainActivity extends AppCompatActivity {
         Log.i("appAction","Grabbing drugs Array container");
         drugsList = Tools.readAnArray(getApplicationContext());
         Log.i("appAction","Drugs container length : " + drugsList.size());
+
+        //Set areHappeningToday list with the drugs which should be taken on this day by the use
+        Log.i("appAction", "Setting areHappeningToday list from the drugs of the stored file ...");
+
+        for (int i = 0; i < drugsList.size(); i++){
+            if (drugsList.get(i).isHappeningToday()){
+                areHappeningToday.add(drugsList.get(i));
+            }
+        }
+        Log.i("appAction", "areHappeningToday list size : " + areHappeningToday.size());
 
         //Importing Floating Action button
         FloatingActionButton newDrugButton = (FloatingActionButton) findViewById(R.id.new_drug_button);
