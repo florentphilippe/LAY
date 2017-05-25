@@ -65,12 +65,16 @@ public class Drug implements Serializable{
         //Boolean result
         Boolean result = false;
 
+        //object calendar copies
+        Calendar thisStartDate = (Calendar) this.getStartDate().clone();
+        Calendar thisEndDate = (Calendar) this.getEndDate().clone();
+
         //Converting calendars date to integers
-        int startDateInt = Tools.dateToInteger(this.getStartDate());
+        int startDateInt = Tools.dateToInteger(thisStartDate);
         int currentDateInt = Tools.dateToInteger(Calendar.getInstance());
 
         //Date used in the process
-        Calendar targetDate = this.getStartDate();
+        Calendar targetDate = thisStartDate;
 
         //Container for all the dates (integers) which match with the frequency
         ArrayList matchingDates = new ArrayList<>();
@@ -81,28 +85,28 @@ public class Drug implements Serializable{
         if (this.frequency.equals("Day")){
             Log.i("appAction","The Drug object frequency is set to 'Day'.");
 
-            while(targetDate.compareTo(this.getEndDate()) < 0){
+            while(targetDate.compareTo(thisEndDate) < 0){
                 targetDate.add(Calendar.DAY_OF_MONTH, this.timesPerFrequency);
                 matchingDates.add(Tools.dateToInteger(targetDate));
             }
         }else if(this.frequency.equals("Week")){
             Log.i("appAction","The Drug object frequency is set to 'Week'.");
 
-            while (targetDate.compareTo(this.getEndDate()) < 0){
+            while (targetDate.compareTo(thisEndDate) < 0){
                 targetDate.add(Calendar.DAY_OF_MONTH, this.timesPerFrequency * 7);
                 matchingDates.add(Tools.dateToInteger(targetDate));
             }
         }else if(this.frequency.equals("Month")){
             Log.i("appAction","The Drug object frequency is set to 'Month'.");
 
-            while (targetDate.compareTo(this.getEndDate()) < 0){
+            while (targetDate.compareTo(thisEndDate) < 0){
                 targetDate.add(Calendar.MONTH, this.timesPerFrequency);
                 matchingDates.add(Tools.dateToInteger(targetDate));
             }
         }else if(this.frequency.equals("Year")){
             Log.i("appAction","The Drug object frequency is set to 'Year'.");
 
-            while (targetDate.compareTo(this.getEndDate()) < 0){
+            while (targetDate.compareTo(thisEndDate) < 0){
                 targetDate.add(Calendar.YEAR, this.timesPerFrequency);
                 matchingDates.add(Tools.dateToInteger(targetDate));
             }
@@ -116,10 +120,8 @@ public class Drug implements Serializable{
             if (matchingDates.get(i).equals(currentDateInt)){
                 result = true;
                 Log.i("appAction","|||| Result ||||\n" + result);
-                break;
             }
         }
-
         return result;
     }
 
