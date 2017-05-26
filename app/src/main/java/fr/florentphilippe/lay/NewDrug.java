@@ -97,6 +97,7 @@ public class NewDrug extends AppCompatActivity {
                         drug.setFrequency(frequencySelector.getSelectedItem().toString());
                         drug.setAbsoluteTime(absoluteTime.getSelectedItem().toString());
                         drug.setRelativeTime(relativeTime.getSelectedItem().toString());
+                        drug.setRelativeTimeDescriber(Tools.relativeTimeToInt(drug));
                         Log.i("appAction","Creating new Drug object");
                         Log.i("appAction",drug.toString());
 

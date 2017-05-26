@@ -96,4 +96,36 @@ public class Tools {
         Log.i("appAction","Calendar converted to : " + result);
         return result;
     }
+
+    //Compute relativeTimeDescriber value
+    public static int relativeTimeToInt (Drug drug){
+        Log.i("appAction","Determine relative time int describer ...");
+
+        int result = 0;
+        String absoluteTime = drug.getAbsoluteTime();
+        String relativeTime = drug.getRelativeTime();
+
+        switch (absoluteTime){
+            case "Breakfast":
+                result = 1;
+                break;
+            case "Lunch":
+                result = 4;
+                break;
+            case "Dinner":
+                result = 7;
+                break;
+        }
+
+        switch (relativeTime){
+            case "Before":
+                result = result - 1;
+                break;
+            case "After":
+                result = result + 1;
+        }
+
+        Log.i("appAction","Relative time describer value : " + result);
+        return result;
+    }
 }
