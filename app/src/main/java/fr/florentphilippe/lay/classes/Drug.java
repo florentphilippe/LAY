@@ -11,6 +11,7 @@ import fr.florentphilippe.lay.Tools;
 /*
 This class represent the "Drug" Object and all its parameters
  */
+
 public class Drug implements Serializable{
 
 
@@ -28,6 +29,16 @@ public class Drug implements Serializable{
     private String absoluteTime;
     private String relativeTime;
 
+
+
+
+    //Relative time integer reference
+    // If i == 1 => 'Breakfast'
+    // If i == 4 => 'Lunch'
+    // If i == 7 => 'Dinner'
+    // +1 if it happens after
+    // -1 if it happens before
+    private int relativeTimeDescriber;
 
 
     //Drug static container
@@ -56,6 +67,7 @@ public class Drug implements Serializable{
         absoluteTime = cAbsoluteTime;
         relativeTime = cRelativeTime;
     }
+
 
     //Determine if the drug has to be taken on the current day
     public Boolean isHappeningToday (){
@@ -127,7 +139,6 @@ public class Drug implements Serializable{
 
 
 
-
     //***Getters***
     public String getDrugName() {
         return drugName;
@@ -161,6 +172,9 @@ public class Drug implements Serializable{
         return relativeTime;
     }
 
+    public int getRelativeTimeDescriber() {
+        return relativeTimeDescriber;
+    }
 
 
 
@@ -197,6 +211,10 @@ public class Drug implements Serializable{
         this.relativeTime = relativeTime;
     }
 
+    public void setRelativeTimeDescriber(int relativeTimeDescriber) {
+        this.relativeTimeDescriber = relativeTimeDescriber;
+    }
+
 
 
     //***ToString***
@@ -209,7 +227,8 @@ public class Drug implements Serializable{
                 +"-Times per Frequency = " + this.timesPerFrequency + "\n"
                 +"-Frequency = " + this.frequency + "\n"
                 +"-Absolute Time = " + this.absoluteTime + "\n"
-                +"-Relative Time = " + this.relativeTime + "\n\n";
+                +"-Relative Time = " + this.relativeTime + "\n"
+                +"-Relative Time Describer = " + this.getRelativeTimeDescriber();
     }
 
 
