@@ -128,4 +128,54 @@ public class Tools {
         Log.i("appAction","Relative time describer value : " + result);
         return result;
     }
+
+    public static ArrayList<Drug> drugContainerSorter (ArrayList<Drug> mainArray){
+        Log.i("appAction","Sort drug container by relative time ");
+        ArrayList<Drug> result = new ArrayList<>();
+
+        StringBuilder before = new StringBuilder();
+        StringBuilder after = new StringBuilder();
+
+        //--Description statement--
+        for (Drug drug : mainArray){
+            before.append("'" + drug.getRelativeTimeDescriber() + "', ");
+        }
+
+        Log.i("appAction", "List state BEFORE : " + before.toString());
+
+
+        //Case the array is empty
+        if (mainArray.isEmpty()){
+            Log.i("appAction","Drug container is Empty !");
+        }else{
+
+            Drug minObj = mainArray.get(0);
+            for (int i = mainArray.size(); i >= 0; i--) {
+                for (Drug drug : mainArray) {
+                    if (drug.getRelativeTimeDescriber() < minObj.getRelativeTimeDescriber()) {
+                        minObj = drug;
+                    }
+                }
+                result.add(minObj);
+                mainArray.remove(minObj);
+                minObj = new Drug();
+                minObj.setRelativeTimeDescriber(10);
+                i--;
+            }
+
+            //Have a unknown issue => There is always one object left after processing
+            if (mainArray.size() <= 1){
+                result.add(mainArray.get(0));
+            }
+        }
+
+        //--Description statement--
+        for (Drug drug : result){
+            after.append("'" + drug.getRelativeTimeDescriber() + "', ");
+        }
+
+        Log.i("appAction", "List state AFTER : " + after.toString());
+
+        return result;
+    }
 }
