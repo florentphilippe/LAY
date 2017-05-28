@@ -1,6 +1,5 @@
 <resources>
     <string name="app_name">L.A.Y.</string>
-    <string name="show_nothing">Nothing to show :[</string>
     <string name="today">Today</string>
     <string name="hint_drug_name">Name</string>
     <string name="hint_lab_name">Laboratory</string>
@@ -27,9 +26,10 @@
     <string-array name="spinner_time2">
         <item>Breakfast</item>
         <item>Lunch</item>
-        <item>Diner</item>
+        <item>Dinner</item>
     </string-array>
     <string name="spinner_prompt_time2">Diner</string>
+    <string name="card_subtitle_string_text">Has to be taken : </string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
