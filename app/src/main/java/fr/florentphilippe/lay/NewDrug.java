@@ -108,6 +108,12 @@ public class NewDrug extends AppCompatActivity {
                         //Write ArrayList container to the internal storage
                         Tools.writeAnArray(MainActivity.drugsList, getApplicationContext());
 
+                        //Determine if the new drug has to be taken on this day
+                        if (drug.isHappeningToday()){
+                            Log.i("appAction","Drug has to be taken today !");
+                            MainActivity.areHappeningToday.add(drug);
+                        }
+
                         //Close activity
                         Log.i("appAction","Close new drug activity intent");
                         finish();

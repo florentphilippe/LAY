@@ -53,6 +53,29 @@ public class MainActivity extends AppCompatActivity {
         }
         Log.i("appAction", "areHappeningToday list size : " + areHappeningToday.size());
 
+
+
+        //Importing Floating Action button
+        FloatingActionButton newDrugButton = (FloatingActionButton) findViewById(R.id.new_drug_button);
+
+        //Setting the newDrugButton click listener
+        newDrugButton.setOnClickListener(
+            new FloatingActionButton.OnClickListener(){
+                public void onClick(View v){
+
+                    //Setting the new activity
+                    Intent i = new Intent (getApplicationContext(),NewDrug.class);
+                    startActivity(i);
+                }
+            }
+        );
+
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+
         //Sort list
         areHappeningToday = Tools.drugContainerSorter(areHappeningToday);
 
@@ -74,22 +97,6 @@ public class MainActivity extends AppCompatActivity {
         mainRecycler.setLayoutManager(mainRecyclerLayout);
 
         mainRecycler.setAdapter(new RecyclerAdapter(areHappeningToday));
-
-        //Importing Floating Action button
-        FloatingActionButton newDrugButton = (FloatingActionButton) findViewById(R.id.new_drug_button);
-
-        //Setting the newDrugButton click listener
-        newDrugButton.setOnClickListener(
-            new FloatingActionButton.OnClickListener(){
-                public void onClick(View v){
-
-                    //Setting the new activity
-                    Intent i = new Intent (getApplicationContext(),NewDrug.class);
-                    startActivity(i);
-                }
-            }
-        );
-
     }
 
     //====TEST STATEMENT=====
