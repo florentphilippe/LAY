@@ -150,9 +150,9 @@ public class Tools {
         }else{
 
             Drug minObj = mainArray.get(0);
-            for (int i = mainArray.size(); i >= 0; i--) {
+            while (mainArray.size() != 0) {
                 for (Drug drug : mainArray) {
-                    if (drug.getRelativeTimeDescriber() < minObj.getRelativeTimeDescriber()) {
+                    if (drug.getRelativeTimeDescriber() <= minObj.getRelativeTimeDescriber()) {
                         minObj = drug;
                     }
                 }
@@ -160,11 +160,13 @@ public class Tools {
                 mainArray.remove(minObj);
                 minObj = new Drug();
                 minObj.setRelativeTimeDescriber(10);
-                i--;
             }
 
-            //Have a unknown issue => There is always one object left after processing
-            if (mainArray.size() <= 1){
+            //Have an unknown issue => There is always one object left after processing
+            if (mainArray.size() >= 1){
+                Log.i("appAction", "-!- SORTING ISSUE -!-");
+                Log.i("appAction", "Main array size : " + mainArray.size());
+                Log.i("appAction", "Result array size : " + result.size());
                 result.add(mainArray.get(0));
             }
         }
