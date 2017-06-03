@@ -9,8 +9,7 @@ import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
 import java.util.ArrayList;
-
-
+import java.util.Calendar;
 import fr.florentphilippe.lay.classes.Drug;
 import fr.florentphilippe.lay.classes.RecyclerAdapter;
 
@@ -43,6 +42,9 @@ public class MainActivity extends AppCompatActivity {
         drugsList = Tools.readAnArray(getApplicationContext());
         Log.i("appAction","Drugs container length : " + drugsList.size());
 
+        //Delete old elements
+        Tools.deleteDrugBeforeADate(drugsList, Calendar.getInstance());
+
         //Set areHappeningToday list with the drugs which should be taken on this day by the user
         Log.i("appAction", "Setting areHappeningToday list from the drugs of the stored file ...");
 
@@ -52,7 +54,6 @@ public class MainActivity extends AppCompatActivity {
             }
         }
         Log.i("appAction", "areHappeningToday list size : " + areHappeningToday.size());
-
 
 
         //Importing Floating Action button
@@ -99,15 +100,12 @@ public class MainActivity extends AppCompatActivity {
         mainRecycler.setAdapter(new RecyclerAdapter(areHappeningToday));
     }
 
-    //====TEST STATEMENT=====
     @Override
     protected void onDestroy() {
         super.onDestroy();
 
-        drugsList = new ArrayList<>();
-
         Log.i("appAction", "onDestroy list length : " + drugsList.size());
         Tools.writeAnArray(drugsList, getApplicationContext());
-        Log.i("appAction", "ArrayList cleared !");
+        Log.i("appAction", "ArrayList saved !");
     }
 }

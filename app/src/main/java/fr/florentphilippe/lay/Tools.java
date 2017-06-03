@@ -129,6 +129,7 @@ public class Tools {
         return result;
     }
 
+    //Sort a drug container with the relative time
     public static ArrayList<Drug> drugContainerSorter (ArrayList<Drug> mainArray){
         Log.i("appAction","Sort drug container by relative time ");
         ArrayList<Drug> result = new ArrayList<>();
@@ -179,5 +180,25 @@ public class Tools {
         Log.i("appAction", "List state AFTER : " + after.toString());
 
         return result;
+    }
+
+    //Delete every drug object which is under a specific date
+    public static void deleteDrugBeforeADate (ArrayList<Drug> drugs, Calendar maximumDate){
+        Log.i("appAction","Delete older drug objects ... ");
+        int initialSize = drugs.size();
+
+        ArrayList<Drug> haveToBeDestroyed = new ArrayList<>();
+
+        for (Drug drug : drugs){
+            if (drug.getEndDate().compareTo(maximumDate) <= 0){
+                haveToBeDestroyed.add(drug);
+            }
+        }
+        for (Drug drug : haveToBeDestroyed){
+            drugs.remove(drug);
+        }
+
+        Log.i("appAction","Deleted objects : " + (initialSize - drugs.size()));
+
     }
 }
