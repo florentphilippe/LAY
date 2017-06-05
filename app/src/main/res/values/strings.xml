@@ -1,6 +1,6 @@
 <resources>
-    <string name="app_name">L.A.Y.</string>
-    <string name="today">Today</string>
+    <string name="app_name">L.A.Y. - Today</string>
+    <string name="nothing">Nothing to show :[</string>
     <string name="hint_drug_name">Name</string>
     <string name="hint_lab_name">Laboratory</string>
     <string name="text_start">Start</string>
