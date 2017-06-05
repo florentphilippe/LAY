@@ -1,6 +1,6 @@
 # LAY - Look After Yourself
-Remember every single medecine you have to take in the day his always a tricky thing.   
-LAY is going to remember every medecine you have to take in the day for you ! 
+To remember every single medecine you have to take in the day his always a tricky thing.   
+LAY is going to remember every drug you have to take in the day for you ! 
 
 This app is available only for Android.  
 
@@ -24,12 +24,12 @@ Unfortunatly the app is not present in the PlayStore yet and you have to install
 1. Go in your phone to **Settings > Security** and check **Unknown Source**.  
 It will only allow you to install apps from other places than the PlayStore.
 
-2. The download the latest version of LAY [here](https://github.com/florentphilippe/LAY/tree/master/app/app-release.apk) ! When download is over just hit the file in the notifications panel.
+2. Then download the latest version of LAY [here](https://github.com/florentphilippe/LAY/releases) ! When download is over just click on the file in the notifications panel.
 
-3. Finally, click **install** and when the installation is finished pick **open**.
+3. Finally, click **install** and when the installation is finished choose **open**.
 
 ## Help & feedback :
-If you have any idea to improve this app you're welcome to fork the github project and push your modifications !
+If you have any ideas to improve this app you're welcome to fork the github project and push your modifications !
 
 ## License :
-This project is free-to-use and copy for now !
+This project is free-to-use and tp copy (for now) !
