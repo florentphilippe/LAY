@@ -24,7 +24,7 @@ Unfortunatly the app is not present in the PlayStore yet and you have to install
 1. Go in your phone to **Settings > Security** and check **Unknown Source**.  
 It will only allow you to install apps from other places than the PlayStore.
 
-2. Then download the latest version of LAY [here](https://github.com/florentphilippe/LAY/releases) ! When download is over just click on the file in the notifications panel.
+2. Then download the latest version of LAY [here](https://github.com/florentphilippe/LAY/raw/master/app/app-release.apk) ! When download is over just click on the file in the notifications panel.
 
 3. Finally, click **install** and when the installation is finished choose **open**.
 
