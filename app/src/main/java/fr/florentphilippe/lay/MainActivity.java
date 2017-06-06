@@ -80,7 +80,6 @@ public class MainActivity extends AppCompatActivity {
         //Sort list
         areHappeningToday = Tools.drugContainerSorter(areHappeningToday);
 
-
         //--Description statement--
         StringBuilder stringBuilder = new StringBuilder();
         for (Drug drug : areHappeningToday){
@@ -88,6 +87,11 @@ public class MainActivity extends AppCompatActivity {
         }
         Log.i("appAction", "List state AreHappeningToday : " + stringBuilder.toString());
         //-- --
+
+        //Disable "nothing to show" TextView if the list is empty
+        if (!areHappeningToday.isEmpty()){
+            findViewById(R.id.text_nothing).setVisibility(View.GONE);
+        }
 
         //Recycler view management & integration
         mainRecycler = (RecyclerView) findViewById(R.id.main_recycler);
@@ -103,7 +107,6 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-
         Log.i("appAction", "onDestroy list length : " + drugsList.size());
         Tools.writeAnArray(drugsList, getApplicationContext());
         Log.i("appAction", "ArrayList saved !");
