@@ -31,5 +31,8 @@ It will only allow you to install apps from other places than the PlayStore.
 ## Help & feedback :
 If you have any ideas to improve this app you're welcome to fork the github project and push your modifications !
 
+## Special thank :
+Thanks a lot to Tenns  ([@ZipTenns](https://twitter.com/ZipTenns)) for the fabulous app icon :p
+
 ## License :
 This project is free-to-use and tp copy (for now) !
