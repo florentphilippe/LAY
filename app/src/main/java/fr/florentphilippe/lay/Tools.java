@@ -8,6 +8,8 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 
@@ -199,6 +201,12 @@ public class Tools {
         }
 
         Log.i("appAction","Deleted objects : " + (initialSize - drugs.size()));
-
     }
+
+    //convert a calendar to an hexadecimal value
+    public static String dateToStringValue(Calendar calendar){
+        DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+        return dateFormat.format(calendar.getTime());
+    }
+
 }

@@ -51,6 +51,34 @@
             android:layout_marginTop="5dp"
             android:layout_alignBaseline="@id/card_subtitle_text"
             />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/start_date_card"
+            android:text=""
+            android:layout_below="@id/card_subtitle_text"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@id/card_cover_image"
+            android:layout_marginTop="5dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/between_date_card"
+            android:text="@string/card_between"
+            android:layout_alignBaseline="@id/start_date_card"
+            android:layout_toRightOf="@id/start_date_card"
+            android:layout_marginLeft="3dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/end_date_card"
+            android:text=""
+            android:layout_alignBaseline="@id/start_date_card"
+            android:layout_toRightOf="@id/between_date_card"
+            android:layout_marginLeft="3dp"/>
         
     </RelativeLayout>
 
