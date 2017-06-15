@@ -60,7 +60,8 @@
             android:layout_below="@id/card_subtitle_text"
             android:layout_marginLeft="10dp"
             android:layout_toRightOf="@id/card_cover_image"
-            android:layout_marginTop="5dp"/>
+            android:layout_marginTop="5dp"
+            android:textSize="10sp"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -69,7 +70,8 @@
             android:text="@string/card_between"
             android:layout_alignBaseline="@id/start_date_card"
             android:layout_toRightOf="@id/start_date_card"
-            android:layout_marginLeft="3dp"/>
+            android:layout_marginLeft="3dp"
+            android:textSize="10sp"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -78,7 +80,8 @@
             android:text=""
             android:layout_alignBaseline="@id/start_date_card"
             android:layout_toRightOf="@id/between_date_card"
-            android:layout_marginLeft="3dp"/>
+            android:layout_marginLeft="3dp"
+            android:textSize="10sp"/>
         
     </RelativeLayout>
 
