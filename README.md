@@ -8,7 +8,7 @@ This app is available only for Android.
 
 The app is still in early development phase and must be used as a beta. Although the app is stable and ready-to-use, there is a lack of features.
 
-### 1.  Currents 
+### 1.  Current 
 -   Add all your drugs with a simple click.
 -   Don't have anything to worry about : just add a frequency for your drug and let the app manage it.
 -   User-friendly simple insterface 
